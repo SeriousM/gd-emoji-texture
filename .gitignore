@@ -3,4 +3,7 @@
 /android/
 
 # Downloaded emoji SVG packs (large; users download via the dock)
-/addons/emoji-texture/packs/
+/addons/emoji-texture/packs/noto/
+/addons/emoji-texture/packs/twemoji/
+/addons/emoji-texture/packs/openmoji/
+/addons/emoji-texture/packs/fluent/

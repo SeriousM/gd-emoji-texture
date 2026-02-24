@@ -18,11 +18,13 @@ func _enter_tree() -> void:
 	_init_registry()
 	_init_downloader()
 	_init_inspector()
+	_init_custom_type()
 	_init_dock()
 	print("[EmojiTexture] Plugin enabled.")
 
 func _exit_tree() -> void:
 	_teardown_dock()
+	_teardown_custom_type()
 	_teardown_inspector()
 	_teardown_downloader()
 	print("[EmojiTexture] Plugin disabled.")
@@ -43,6 +45,11 @@ func _init_inspector() -> void:
 	_inspector_plugin = EmojiInspectorPlugin.new()
 	add_inspector_plugin(_inspector_plugin)
 
+func _init_custom_type() -> void:
+	var script := preload("res://addons/emoji-texture/emoji_texture.gd")
+	var icon   := preload("res://addons/emoji-texture/EmojiTexture.svg")
+	add_custom_type("EmojiTexture", "Texture2D", script, icon)
+
 func _init_dock() -> void:
 	_dock = _build_dock()
 	add_control_to_dock(DOCK_SLOT_LEFT_BR, _dock)
@@ -55,6 +62,9 @@ func _teardown_dock() -> void:
 		remove_control_from_docks(_dock)
 		_dock.queue_free()
 		_dock = null
+
+func _teardown_custom_type() -> void:
+	remove_custom_type("EmojiTexture")
 
 func _teardown_inspector() -> void:
 	if _inspector_plugin != null:

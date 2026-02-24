@@ -190,11 +190,17 @@ func _extract_zip_threaded(zip_path: String, task: Dictionary) -> void:
 	var inner_prefix: String = pack.get("zip_inner_path", "")
 	var dest_dir := EmojiPackRegistry.PACKS_DIR + pack_id + "/"
 
+	# Resolve all res:// paths to absolute paths HERE, on the main thread context,
+	# before entering the loop. Calling ProjectSettings.globalize_path() thousands
+	# of times inside a thread loop can fail with "null value" mid-run.
+	var dest_abs := ProjectSettings.globalize_path(dest_dir)
+	var zip_abs  := ProjectSettings.globalize_path(zip_path)
+
 	# Ensure destination directory exists
-	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(dest_dir))
+	DirAccess.make_dir_recursive_absolute(dest_abs)
 
 	var reader := ZIPReader.new()
-	var err := reader.open(ProjectSettings.globalize_path(zip_path))
+	var err := reader.open(zip_abs)
 	if err != OK:
 		_cleanup_tmp(zip_path)
 		# _fail must run on the main thread
@@ -223,9 +229,8 @@ func _extract_zip_threaded(zip_path: String, task: Dictionary) -> void:
 
 		# Derive output filename (strip the inner path prefix)
 		var out_name := f.get_file()   # just the filename
-		var out_path := dest_dir + out_name
+		var out_abs := dest_abs + out_name
 
-		var out_abs := ProjectSettings.globalize_path(out_path)
 		var fw := FileAccess.open(out_abs, FileAccess.WRITE)
 		if fw == null:
 			push_warning("[EmojiDownloader] Cannot write: " + out_abs)
@@ -252,7 +257,7 @@ func _extract_zip_threaded(zip_path: String, task: Dictionary) -> void:
 	# Write LICENSE file
 	var license_text: String = pack.get("attribution", "")
 	if not license_text.is_empty():
-		var lic_path := ProjectSettings.globalize_path(dest_dir + "LICENSE.txt")
+		var lic_path := dest_abs + "LICENSE.txt"
 		var lf := FileAccess.open(lic_path, FileAccess.WRITE)
 		if lf:
 			lf.store_string(license_text + "\n\nLicense URL: " + pack.get("license_url", "") + "\n")

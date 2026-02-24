@@ -1,0 +1,3 @@
+# This directory holds downloaded emoji SVG packs.
+# Packs are NOT committed to git (see .gitignore) — download them via
+# the "Emoji Packs" dock in the Godot editor after enabling the plugin.

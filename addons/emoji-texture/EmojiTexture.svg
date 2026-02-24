@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <!-- Outer frame border -->
+  <rect x="0.5" y="0.5" width="15" height="15" rx="1.5" ry="1.5" fill="#8B5E1A" stroke="#5C3A0A" stroke-width="1"/>
+  <!-- Inner frame inset -->
+  <rect x="2.5" y="2.5" width="11" height="11" rx="0.5" ry="0.5" fill="#6B4813" stroke="#3E2506" stroke-width="0.5"/>
+  <!-- Canvas / picture area -->
+  <rect x="3.5" y="3.5" width="9" height="9" fill="#E8D8A0"/>
+  <!-- Sky gradient approximation -->
+  <rect x="3.5" y="3.5" width="9" height="5" fill="#87CEEB"/>
+  <!-- Sun -->
+  <circle cx="11" cy="5.5" r="1.2" fill="#FFD700"/>
+  <!-- Hills -->
+  <polygon points="3.5,12.5 6.5,7.5 9.5,10 12.5,7 12.5,12.5" fill="#4A8A3C"/>
+  <!-- Foreground strip -->
+  <rect x="3.5" y="11.5" width="9" height="1" fill="#3A6E2C"/>
+</svg>
