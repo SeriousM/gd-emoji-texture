@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c4onimj83phsq"]
+
+[ext_resource type="Script" uid="uid://b8j25ax3qr7fc" path="res://addons/emoji-texture/emoji_texture.gd" id="1_80nbo"]
+
+[sub_resource type="Texture2D" id="Texture2D_e2o6t"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("1_80nbo")
+emoji_codepoint = "1faf5-1f3ff"
+pack_id = "noto"
+metadata/_custom_type_script = "uid://b8j25ax3qr7fc"
+
+[sub_resource type="Texture2D" id="Texture2D_feb5d"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("1_80nbo")
+emoji_codepoint = "1f0cf"
+pack_id = "twemoji"
+metadata/_custom_type_script = "uid://b8j25ax3qr7fc"
+
+[node name="Node2D" type="Node2D" unique_id=1341975573]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=835024873]
+position = Vector2(560, 311)
+texture = SubResource("Texture2D_e2o6t")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=2053065981]
+texture = SubResource("Texture2D_feb5d")

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ba1bbgkvhm15x"]
+
+[ext_resource type="Script" uid="uid://b8j25ax3qr7fc" path="res://addons/emoji-texture/emoji_texture.gd" id="1_p5xin"]
+
+[sub_resource type="Texture2D" id="Texture2D_p5xin"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("1_p5xin")
+emoji_codepoint = "1f0cf"
+pack_id = "twemoji"
+metadata/_custom_type_script = "uid://b8j25ax3qr7fc"
+
+[node name="Node3D" type="Node3D" unique_id=678661424]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1829423380]
+texture = SubResource("Texture2D_p5xin")

@@ -1,0 +1,70 @@
+{
+  "packs": [
+    {
+      "id": "openmoji",
+      "name": "OpenMoji",
+      "type": "svg",
+      "description": "Open-source emoji by HFG Gmünd (University of Design). Colorful flat style. Unicode 16.0.",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "version": "16.0.0",
+      "estimated_size_mb": 5.1,
+      "recommended": true,
+      "mirrors": [
+        "https://github.com/hfg-gmuend/openmoji/releases/download/16.0.0/openmoji-svg-color.zip"
+      ],
+      "zip_inner_path": "",
+      "filename_prefix": "",
+      "filename_suffix": ".svg",
+      "codepoint_case": "upper",
+      "codepoint_separator": "-",
+      "hex_min_digits": 4,
+      "fe0f_in_filename": false,
+      "attribution": "OpenMoji – the open-source emoji and icon project. License: CC BY-SA 4.0. Designer/author: HFG Gmünd."
+    },
+    {
+      "id": "noto",
+      "name": "Noto Color Emoji",
+      "type": "svg",
+      "description": "Google's Noto Color Emoji. Wide Unicode coverage, neutral style. Unicode 17.0.",
+      "license": "Apache 2.0",
+      "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
+      "version": "v2.051",
+      "estimated_size_mb": 99.0,
+      "recommended": false,
+      "mirrors": [
+        "https://github.com/googlefonts/noto-emoji/archive/refs/tags/v2.051.zip"
+      ],
+      "zip_inner_path": "noto-emoji-2.051/svg/",
+      "filename_prefix": "emoji_u",
+      "filename_suffix": ".svg",
+      "codepoint_case": "lower",
+      "codepoint_separator": "_",
+      "hex_min_digits": 0,
+      "fe0f_in_filename": false,
+      "attribution": "Noto Color Emoji by Google. License: Apache 2.0."
+    },
+    {
+      "id": "twemoji",
+      "name": "Twemoji",
+      "type": "svg",
+      "description": "Emoji from Twitter/Mozilla (jdecked fork). Simple vector style. Unicode 17.0.",
+      "license": "CC-BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "version": "v17.0.2",
+      "estimated_size_mb": 30.0,
+      "recommended": false,
+      "mirrors": [
+        "https://github.com/jdecked/twemoji/archive/refs/tags/v17.0.2.zip"
+      ],
+      "zip_inner_path": "twemoji-17.0.2/assets/svg/",
+      "filename_prefix": "",
+      "filename_suffix": ".svg",
+      "codepoint_case": "lower",
+      "codepoint_separator": "-",
+      "hex_min_digits": 0,
+      "fe0f_in_filename": true,
+      "attribution": "Twemoji by Twitter/jdecked fork. License: CC-BY 4.0."
+    }
+  ]
+}

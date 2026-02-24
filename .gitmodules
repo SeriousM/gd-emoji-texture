@@ -1,0 +1,3 @@
+[submodule "reference/gd-OmnEmoji"]
+	path = reference/gd-OmnEmoji
+	url = https://codeberg.org/gllm/gd-OmnEmoji.git
